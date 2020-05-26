@@ -1,15 +1,16 @@
 import checkNumImputs from './checkNumImputs';
 const changeModalState = (state) =>{
-
+//получаем данные со страницы
     const   windowForm = document.querySelectorAll('.balcon_icons_img'),
             windowWidth = document.querySelectorAll('#width'),
             windowHeight = document.querySelectorAll('#height'),
             windowType = document.querySelectorAll('#view_type'),
             windowProfile = document.querySelectorAll('.checkbox');
-
+//проверка полей на только числа
 checkNumImputs('#width');
 checkNumImputs('#height');
 
+//фукнция для записи данных в объект
     function bindActionToElems (event, elem, prop) {
 
         elem.forEach((item, i) => {
