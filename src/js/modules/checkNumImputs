@@ -1,9 +1,9 @@
 const checkNumImputs = (selector) => {
     const numIputs = document.querySelectorAll(selector);
-
+//проверка на числовые данные 
     numIputs.forEach(item => {
         item.addEventListener('input', () => {
-         item.value = item.value.replace(/\D/, '');
+         item.value = item.value.replace(/\D/, ''); //регулярное выражение
         });
     });
 };

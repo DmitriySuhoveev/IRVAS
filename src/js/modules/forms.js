@@ -12,7 +12,7 @@ checkNumImputs('input[name = "user_phone"]');
     success: 'Спасибо мы скоро с вами свяжемся!',
     failure: 'Что-то пошлно не так...'
    };
-
+//функция отправки данных
    const postData = async (url, data) =>{
     document.querySelector('.status').innerHTML = message.loading;
     let res = await fetch(url, {
@@ -21,7 +21,7 @@ checkNumImputs('input[name = "user_phone"]');
     });
     return await res.text();
    };
-
+//отчистка поля
    const clearInputs = () => {
        inputs.forEach(item => {
            item.value = '';
@@ -32,7 +32,7 @@ checkNumImputs('input[name = "user_phone"]');
    form.forEach(item => {
     item.addEventListener('submit', (e) => {
         e.preventDefault(); 
-        
+        //создание элемента под контентом 
         let statusMessage = document.createElement('div');
         statusMessage.classList.add('status');
         item.appendChild(statusMessage);
@@ -43,7 +43,7 @@ checkNumImputs('input[name = "user_phone"]');
                 formData.append(key, state[key]);
             }
         }
-
+        //отправка на сервер
         postData('assets/server.php', formData)
         .then(res => {
             console.log(res);

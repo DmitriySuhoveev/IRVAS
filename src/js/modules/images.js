@@ -6,12 +6,12 @@ const images = () =>{
     
     imgPopup.classList.add('popup');
     workSection.appendChild(imgPopup);
-
+    //позиционирование
     imgPopup.style.justifyContent = 'center';
     imgPopup.style.alignItems = 'center';
     imgPopup.style.display = 'none';
 
-
+    //получение большой картинки через appendChild
     imgPopup.appendChild(bigImage);
 
     workSection.addEventListener('click', (event) => {
@@ -21,7 +21,7 @@ const images = () =>{
 
         if(target && target.classList.contains('preview')){
             imgPopup.style.display ='flex';
-            const path = target.parentNode.getAttribute('href');
+            const path = target.parentNode.getAttribute('href');//нажатие на картинки, это нажатие на ссылки на картинки
             bigImage.setAttribute('src', path);
         }
 

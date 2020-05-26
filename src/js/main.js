@@ -9,7 +9,7 @@ import images from './modules/images';
 window.addEventListener('DOMContentLoaded', () => {
     "use strict";
 
-    let modalState = {};
+    let modalState = {}; //объект который получаем при отправке формы на сервер. Сюда записываются все выбранные условия пользователя при заказе
     let deadline = '2020-06-06';
 
     changeModalState(modalState);

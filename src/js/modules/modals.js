@@ -5,13 +5,13 @@ const modals = () => {
         close = document.querySelector(closeSelector),
         windows = document.querySelectorAll('[data-modal]');
         scroll = calcScroll();
-        
+        //отмена стандартного поведения браузера при клике
             trigger.forEach(item => {
                 item.addEventListener('click', (e) => {
                     if (e.target) {
                         e.preventDefault();
                     }
-
+                    //блокировка основного контента при модальном окне
                     windows.forEach(item => {
                         item.style.display = 'none';
                     });
@@ -23,7 +23,7 @@ const modals = () => {
             });
 
         });
-
+        //закрытие модального окна
         close.addEventListener("click", () => {
 
             windows.forEach(item => {
@@ -36,7 +36,7 @@ const modals = () => {
             document.body.style.marginRight = `0px`;
            // document.body.classList.remove('modal-open');
         });
-
+        //при клике на подложку
         modal.addEventListener('click', (e) => {
             if(e.target === modal && closeClickOverlay) {
 
@@ -52,7 +52,7 @@ const modals = () => {
             }
         });
     }
-
+//таймер, после 1 минуты прибывания на сайте автоматически появляется модальное окно
     function showModalByTime(selector, time) {
         setTimeout( ()  => {
             document.querySelector(selector).style.display = 'block';
@@ -61,7 +61,7 @@ const modals = () => {
 
         
     }
-
+    //фикс смещения сайта при появлении модального окна
     function calcScroll() {
         let div = document.createElement('div');
         div.style.width = '50px';
