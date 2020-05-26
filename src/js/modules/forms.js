@@ -61,5 +61,4 @@ checkNumImputs('input[name = "user_phone"]');
 };
 
 
-
 export default forms;

@@ -6,7 +6,7 @@ const timer = (id, deadline) => {
             return num;
         }
     };
-
+    //считаем как будет высчитываться
     const getTimeRemaining = (endtime) => {
         const t = Date.parse(endtime) - Date.parse(new Date()),
               seconds = Math.floor((t/1000) % 60),
